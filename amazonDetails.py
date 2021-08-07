@@ -38,7 +38,31 @@ def printDetails(soup):
         amazonPrice = getamzPrice(soup) # current price on Amazon
         youSave, youSavePercentage = getYouSave(soup) # the saved money and percentage of saved
     except:
-        print("\n\n------------------unable to fetch the product details------------------\n\n")
+        try:
+            productTitle = getProductTitle(soup)
+            brandName = getBrandName(soup)
+            amazonPrice = getamzPrice(soup)
+            print("""
+----------------------------------------------------------------------------------------
+
+    Product\t\t:\t{}
+    Brand Name\t\t:\t{}
+    Amazon Price\t:\t₹ {:,}
+
+----------------------------------------------------------------------------------------""".format(productTitle,brandName,amazonPrice))
+        except:
+            try:
+                productTitle = getProductTitle(soup)
+                brandName = getBrandName(soup)
+                print("""
+----------------------------------------------------------------------------------------
+
+    Product\t\t:\t{}
+    Brand Name\t\t:\t{}
+
+----------------------------------------------------------------------------------------""".format(productTitle,brandName))
+            except:
+                print("\n\n------------------unable to fetch the product details------------------\n\n")
         return
     if getAvailability(soup):
         availability="This product is currently in Stock!"
