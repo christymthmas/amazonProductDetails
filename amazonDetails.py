@@ -12,8 +12,10 @@ def getMRP(soup):
     return mrp
 
 def getamzPrice(soup):
+    
     amzPriceStr = soup.find_all("td", class_ ="a-span12")[1].text.strip().replace("₹","").replace(",","")
     amzPrice=round(float(amzPriceStr))
+    
     return amzPrice
 
 def getYouSave(soup):
