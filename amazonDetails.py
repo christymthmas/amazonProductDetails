@@ -59,7 +59,8 @@ def printDetails(soup):
 
     Product\t\t:\t{}
     Brand Name\t\t:\t{}
-
+    
+    (Unable to fetch the price details)
 ----------------------------------------------------------------------------------------""".format(productTitle,brandName))
             except:
                 print("\n\n------------------unable to fetch the product details------------------\n\n")
