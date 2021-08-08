@@ -70,6 +70,7 @@ def printDetails(soup):
     Brand Name\t\t:\t{}
     
         (Unable to fetch the price details)
+        
 ----------------------------------------------------------------------------------------""".format(productTitle,brandName))
                 return False
             except:
