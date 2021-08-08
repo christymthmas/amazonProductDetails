@@ -27,5 +27,5 @@ def printTopReviews(soup):
     for i, review in enumerate(reviews,1):
         print(i,review,sep=". ",end="\n\n")
 
-if __name__=="__main__":
-    printTopReviews(soup)
+# if __name__=="__main__":
+#     printTopReviews(soup)

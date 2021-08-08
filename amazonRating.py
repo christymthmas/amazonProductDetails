@@ -80,12 +80,6 @@ if __name__=="__main__":
     starsPer = getStarPercentage(soup) #list
     outOfFive = getOutOfFiveRating(soup) #float
 
-    # fiveStar = starsPer[0]
-    # fourStar = starsPer[1]
-    # threeStar = starsPer[2]
-    # twoStar = starsPer[3]
-    # oneStar = starsPer[4]
-
     print(starsPer)
     
 
