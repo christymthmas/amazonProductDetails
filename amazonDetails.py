@@ -92,6 +92,7 @@ def printDetails(soup):
     Brand Name\t\t:\t{}
     Amazon Price\t:\t₹ {:,}
     MRP\t\t\t:\t₹ {:,}
+    
     \tYou'll save ₹ {:,} ({}%)
 
     {}
