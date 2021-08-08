@@ -12,10 +12,16 @@ def getMRP(soup):
     return mrp
 
 def getamzPrice(soup):
+    try:
+        amzPriceStr = soup.find_all("td", class_ ="a-span12")[1].text.strip().replace("₹","").replace(",","")
+    except:
+        try:
+            amzPriceStr = soup.find("span", id="priceblock_dealprice").text.strip().replace("₹","").replace(",","")
+        except:
+            amzPriceStr = soup.find("span", id="priceblock_ourprice").text.strip().replace("₹","").replace(",","")
+
     
-    amzPriceStr = soup.find_all("td", class_ ="a-span12")[1].text.strip().replace("₹","").replace(",","")
     amzPrice=round(float(amzPriceStr))
-    
     return amzPrice
 
 def getYouSave(soup):
@@ -52,6 +58,7 @@ def printDetails(soup):
     Amazon Price\t:\t₹ {:,}
 
 ----------------------------------------------------------------------------------------""".format(productTitle,brandName,amazonPrice))
+            return True
         except:
             try:
                 productTitle = getProductTitle(soup)
@@ -64,9 +71,13 @@ def printDetails(soup):
     
         (Unable to fetch the price details)
 ----------------------------------------------------------------------------------------""".format(productTitle,brandName))
+                return False
             except:
                 print("\n\n------------------unable to fetch the product details------------------\n\n")
-        return
+                return False
+
+            
+    
     if getAvailability(soup):
         availability="This product is currently in Stock!"
     else:
@@ -84,6 +95,10 @@ def printDetails(soup):
 
     {}
     
-----------------------------------------------------------------------------------------""".format(productTitle,brandName,amazonPrice,mrp,youSave,youSavePercentage,availability))
+----------------------------------------------------------------------------------------
+""".format(productTitle,brandName,amazonPrice,mrp,youSave,youSavePercentage,availability))
+    return True
+
+
 
 
