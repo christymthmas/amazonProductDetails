@@ -71,6 +71,7 @@ if __name__=="__main__":
     headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.115 Safari/537.36"}
 
     url = input("Paste the Amazon URL of the product :")
+    
     #url = "https://www.amazon.in/COTTON-SHOPY-Womens-Embroidered-Kanjivaram/dp/B08H11HVMH/ref=pd_sbs_2/261-0957789-8344412?pd_rd_w=iNuYF&pf_rd_p=950901b9-b71e-4c33-9fc5-41ec6db58ad1&pf_rd_r=P42KRHGY79GQTVKSRV0Y&pd_rd_r=0ffff1db-ea9e-4c9a-9472-7f18bbd1a07a&pd_rd_wg=2QCAF&pd_rd_i=B08H11FBV1&th=1"
     resp = requests.get(url, headers=headers)
 
