@@ -26,7 +26,7 @@ if __name__=="__main__":
 
     resp = requests.get(url, headers=headers)
 
-    soup=BeautifulSoup(resp.content,"lxml")
+    soup = BeautifulSoup(resp.content,"lxml")
 
     
     details.printDetails(soup)
